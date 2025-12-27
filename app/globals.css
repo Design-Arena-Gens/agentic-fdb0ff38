@@ -1,0 +1,189 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #05060a;
+  color: #e9f2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(86, 109, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(80, 220, 197, 0.2), transparent 50%),
+    linear-gradient(160deg, #05060a 0%, #04030a 45%, #0a101f 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+main {
+  min-height: 100vh;
+}
+
+textarea,
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+.container {
+  width: min(1200px, 90vw);
+  margin: 0 auto;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 32px;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(86, 109, 255, 0.65), rgba(80, 220, 197, 0.45), rgba(214, 102, 255, 0.6));
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(60deg, rgba(90, 133, 255, 0.4), rgba(204, 64, 255, 0.35));
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.card {
+  background: rgba(6, 10, 24, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: 32px;
+  padding: 2.5rem;
+  border: 1px solid rgba(120, 160, 255, 0.1);
+  box-shadow: 0 24px 60px rgba(5, 8, 25, 0.65);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.section-subtitle {
+  margin: 0.75rem 0 0;
+  color: rgba(219, 233, 255, 0.65);
+  max-width: 54ch;
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.cta-btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(130deg, rgba(104, 163, 255, 0.95), rgba(77, 236, 205, 0.9));
+  color: #05060a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 20px 35px rgba(45, 180, 255, 0.25);
+}
+
+.secondary-btn {
+  background: rgba(24, 35, 70, 0.9);
+  color: rgba(224, 239, 255, 0.95);
+  border: 1px solid rgba(80, 220, 197, 0.2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  color: rgba(217, 229, 255, 0.8);
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.8rem;
+}
+
+.metric {
+  padding: 1rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(15, 20, 43, 0.85);
+  border: 1px solid rgba(77, 236, 205, 0.1);
+}
+
+.metric strong {
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.metric span {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgba(200, 215, 255, 0.6);
+  font-size: 0.95rem;
+}
+
+section + section {
+  margin-top: 4.5rem;
+}
+
+.footer {
+  margin-top: 6rem;
+  padding: 2rem 0 3rem;
+  color: rgba(170, 195, 255, 0.6);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
+  }
+
+  .metrics-grid {
+    margin-top: 2rem;
+  }
+}
